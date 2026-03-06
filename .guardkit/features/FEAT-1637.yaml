@@ -1,0 +1,93 @@
+id: FEAT-1637
+name: FastAPI Base Project
+description: Production-structured FastAPI application with health endpoints, structured
+  JSON logging with correlation IDs, Pydantic settings management, and app factory
+  pattern. Zero external dependencies.
+created: '2026-03-06T17:34:26.533948'
+status: planned
+complexity: 6
+estimated_tasks: 7
+tasks:
+- id: TASK-FBP-001
+  name: Project scaffolding and directory structure
+  file_path: tasks/backlog/fastapi-base-project/TASK-FBP-001-project-scaffolding.md
+  complexity: 3
+  dependencies: []
+  status: pending
+  description: ''
+  implementation_mode: direct
+  estimated_minutes: 33
+- id: TASK-FBP-002
+  name: Pydantic settings with validation
+  file_path: tasks/backlog/fastapi-base-project/TASK-FBP-002-pydantic-settings.md
+  complexity: 4
+  dependencies:
+  - TASK-FBP-001
+  status: pending
+  description: ''
+  implementation_mode: task-work
+  estimated_minutes: 50
+- id: TASK-FBP-003
+  name: Structured logging with JSON and text formats
+  file_path: tasks/backlog/fastapi-base-project/TASK-FBP-003-structured-logging.md
+  complexity: 5
+  dependencies:
+  - TASK-FBP-001
+  - TASK-FBP-002
+  status: pending
+  description: ''
+  implementation_mode: task-work
+  estimated_minutes: 75
+- id: TASK-FBP-004
+  name: Correlation ID middleware with ContextVar
+  file_path: tasks/backlog/fastapi-base-project/TASK-FBP-004-correlation-id-middleware.md
+  complexity: 5
+  dependencies:
+  - TASK-FBP-001
+  status: pending
+  description: ''
+  implementation_mode: task-work
+  estimated_minutes: 75
+- id: TASK-FBP-005
+  name: Health endpoints and app factory
+  file_path: tasks/backlog/fastapi-base-project/TASK-FBP-005-health-endpoints.md
+  complexity: 4
+  dependencies:
+  - TASK-FBP-002
+  - TASK-FBP-003
+  - TASK-FBP-004
+  status: pending
+  description: ''
+  implementation_mode: task-work
+  estimated_minutes: 50
+- id: TASK-FBP-006
+  name: Integration tests for all 28 BDD scenarios
+  file_path: tasks/backlog/fastapi-base-project/TASK-FBP-006-integration-tests.md
+  complexity: 6
+  dependencies:
+  - TASK-FBP-005
+  status: pending
+  description: ''
+  implementation_mode: task-work
+  estimated_minutes: 113
+- id: TASK-FBP-007
+  name: Quality gates ruff mypy pytest-cov configuration
+  file_path: tasks/backlog/fastapi-base-project/TASK-FBP-007-quality-gates.md
+  complexity: 3
+  dependencies:
+  - TASK-FBP-005
+  status: pending
+  description: ''
+  implementation_mode: direct
+  estimated_minutes: 33
+orchestration:
+  parallel_groups:
+  - - TASK-FBP-001
+  - - TASK-FBP-002
+    - TASK-FBP-004
+  - - TASK-FBP-003
+  - - TASK-FBP-005
+  - - TASK-FBP-006
+    - TASK-FBP-007
+  estimated_duration_minutes: 429
+  recommended_parallel: 2

@@ -1,0 +1,96 @@
+id: FEAT-4A8A
+name: AutoBuild Benchmark Suite
+description: Suite of 7 self-contained benchmark tasks (BENCH-001 through BENCH-007)
+  built on the FastAPI base project, designed to generate comparable llm.call
+  instrumentation data across different AutoBuild prompt profiles. 98 BDD scenarios
+  across Tier A (complexity 3-4) and Tier B (complexity 5-6).
+created: '2026-03-06T00:00:00Z'
+status: planned
+complexity: 6
+estimated_tasks: 7
+tasks:
+- id: TASK-ABS-001
+  name: Reference Data Validator (BENCH-001)
+  file_path: tasks/backlog/autobuild-benchmark-suite/TASK-ABS-001-reference-data-validator.md
+  complexity: 3
+  dependencies:
+  - FEAT-1637
+  status: pending
+  description: Controlled vocabulary validator with reference data API endpoint (14 scenarios)
+  implementation_mode: task-work
+  estimated_minutes: 45
+- id: TASK-ABS-002
+  name: Fee Calculator (BENCH-002)
+  file_path: tasks/backlog/autobuild-benchmark-suite/TASK-ABS-002-fee-calculator.md
+  complexity: 3
+  dependencies:
+  - FEAT-1637
+  status: pending
+  description: Fee calculation based on document type, applicant category, and processing mode (13 scenarios)
+  implementation_mode: task-work
+  estimated_minutes: 45
+- id: TASK-ABS-003
+  name: Pagination Helper (BENCH-003)
+  file_path: tasks/backlog/autobuild-benchmark-suite/TASK-ABS-003-pagination-helper.md
+  complexity: 3
+  dependencies:
+  - FEAT-1637
+  status: pending
+  description: Reusable PaginatedResponse[T] generic type with paginated reference endpoint (16 scenarios)
+  implementation_mode: task-work
+  estimated_minutes: 45
+- id: TASK-ABS-004
+  name: Structured Error Responses (BENCH-004)
+  file_path: tasks/backlog/autobuild-benchmark-suite/TASK-ABS-004-structured-error-responses.md
+  complexity: 4
+  dependencies:
+  - FEAT-1637
+  status: pending
+  description: Global structured error handling with ErrorResponse format and exception handlers (11 scenarios)
+  implementation_mode: task-work
+  estimated_minutes: 60
+- id: TASK-ABS-005
+  name: Request/Response Logging Middleware (BENCH-005)
+  file_path: tasks/backlog/autobuild-benchmark-suite/TASK-ABS-005-request-response-logging.md
+  complexity: 4
+  dependencies:
+  - FEAT-1637
+  status: pending
+  description: ASGI middleware for structured request/response logging with correlation tracing (11 scenarios)
+  implementation_mode: task-work
+  estimated_minutes: 60
+- id: TASK-ABS-006
+  name: Client Record API (BENCH-006)
+  file_path: tasks/backlog/autobuild-benchmark-suite/TASK-ABS-006-client-record-api.md
+  complexity: 5
+  dependencies:
+  - FEAT-1637
+  - TASK-ABS-003
+  - TASK-ABS-004
+  status: pending
+  description: Full CRUD API for client records with in-memory store, pagination, and concurrency safety (21 scenarios)
+  implementation_mode: task-work
+  estimated_minutes: 90
+- id: TASK-ABS-007
+  name: Submission State Machine (BENCH-007)
+  file_path: tasks/backlog/autobuild-benchmark-suite/TASK-ABS-007-submission-state-machine.md
+  complexity: 6
+  dependencies:
+  - FEAT-1637
+  - TASK-ABS-003
+  - TASK-ABS-004
+  status: pending
+  description: Document submission lifecycle state machine with transitions, history, and concurrency safety (22 scenarios)
+  implementation_mode: task-work
+  estimated_minutes: 105
+orchestration:
+  parallel_groups:
+  - - TASK-ABS-001
+    - TASK-ABS-002
+    - TASK-ABS-003
+  - - TASK-ABS-004
+    - TASK-ABS-005
+  - - TASK-ABS-006
+    - TASK-ABS-007
+  estimated_duration_minutes: 450
+  recommended_parallel: 3
