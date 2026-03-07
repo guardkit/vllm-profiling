@@ -42,6 +42,8 @@ ANTHROPIC_BASE_URL=http://promaxgb10-41b1:8000 \
 ANTHROPIC_API_KEY=vllm-local-key \
 guardkit autobuild feature FEAT-1637 --max-turns 30 --verbose
 
+ANTHROPIC_BASE_URL=http://localhost:8000 ANTHROPIC_API_KEY=vllm-local guardkit autobuild feature FEAT-1637 --max-turns 30 --verbose
+
 
 
 
@@ -90,3 +92,5 @@ GUARDKIT_LOG_LEVEL=DEBUG guardkit autobuild feature FEAT-4A8A --max-turns 25
 ANTHROPIC_BASE_URL=http://promaxgb10-41b1:8000 \
 ANTHROPIC_API_KEY=vllm-local-key \
 guardkit autobuild feature FEAT-4A8A --max-turns 30 --verbose
+
+ANTHROPIC_BASE_URL=http://localhost:8000 ANTHROPIC_API_KEY=vllm-local guardkit autobuild feature FEAT-4A8A --max-turns 30 --verbose
