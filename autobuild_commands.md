@@ -38,6 +38,10 @@ Or autonomous build: /feature-build FEAT-1637
 
 GUARDKIT_LOG_LEVEL=DEBUG guardkit autobuild feature FEAT-1637 --max-turns 30
 
+ANTHROPIC_BASE_URL=http://promaxgb10-41b1:8000 \
+ANTHROPIC_API_KEY=vllm-local-key \
+guardkit autobuild feature FEAT-1637 --max-turns 30 --verbose
+
 
 
 
@@ -82,3 +86,7 @@ Then start Wave 1: /task-work TASK-ABS-001
 
 
 GUARDKIT_LOG_LEVEL=DEBUG guardkit autobuild feature FEAT-4A8A --max-turns 25
+
+ANTHROPIC_BASE_URL=http://promaxgb10-41b1:8000 \
+ANTHROPIC_API_KEY=vllm-local-key \
+guardkit autobuild feature FEAT-4A8A --max-turns 30 --verbose
