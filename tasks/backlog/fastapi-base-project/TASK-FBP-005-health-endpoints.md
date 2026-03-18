@@ -1,35 +1,56 @@
 ---
 id: TASK-FBP-005
-title: "Health endpoints and app factory"
+title: Health endpoints and app factory
 task_type: feature
 parent_review: TASK-REV-01B0
 feature_id: FEAT-FBP
-status: pending
+status: in_review
 wave: 3
 implementation_mode: task-work
 complexity: 4
 dependencies:
-  - TASK-FBP-002
-  - TASK-FBP-003
-  - TASK-FBP-004
+- TASK-FBP-002
+- TASK-FBP-003
+- TASK-FBP-004
 priority: high
-tags: [health, endpoints, app-factory]
+tags:
+- health
+- endpoints
+- app-factory
 consumer_context:
-  - task: TASK-FBP-002
-    consumes: SETTINGS
-    framework: "Pydantic BaseSettings"
-    driver: "pydantic-settings"
-    format_note: "Settings instance passed to create_app(); fields include environment, app_version, log_level, log_format, api_prefix"
-  - task: TASK-FBP-003
-    consumes: LOGGING_SETUP
-    framework: "Python stdlib logging"
-    driver: "logging"
-    format_note: "setup_logging(settings) must be called in create_app() before routes are registered"
-  - task: TASK-FBP-004
-    consumes: CORRELATION_ID_MIDDLEWARE
-    framework: "Starlette middleware"
-    driver: "starlette"
-    format_note: "CorrelationIdMiddleware must be added to app via app.add_middleware() in create_app()"
+- task: TASK-FBP-002
+  consumes: SETTINGS
+  framework: Pydantic BaseSettings
+  driver: pydantic-settings
+  format_note: Settings instance passed to create_app(); fields include environment,
+    app_version, log_level, log_format, api_prefix
+- task: TASK-FBP-003
+  consumes: LOGGING_SETUP
+  framework: Python stdlib logging
+  driver: logging
+  format_note: setup_logging(settings) must be called in create_app() before routes
+    are registered
+- task: TASK-FBP-004
+  consumes: CORRELATION_ID_MIDDLEWARE
+  framework: Starlette middleware
+  driver: starlette
+  format_note: CorrelationIdMiddleware must be added to app via app.add_middleware()
+    in create_app()
+autobuild_state:
+  current_turn: 1
+  max_turns: 30
+  worktree_path: /Users/richardwoollcott/Projects/appmilla_github/vllm-profiling/.guardkit/worktrees/FEAT-1637
+  base_branch: main
+  started_at: '2026-03-07T12:37:00.219467'
+  last_updated: '2026-03-07T12:42:29.964800'
+  turns:
+  - turn: 1
+    decision: approve
+    feedback: null
+    timestamp: '2026-03-07T12:37:00.219467'
+    player_summary: Implementation via task-work delegation
+    player_success: true
+    coach_success: true
 ---
 
 # Task: Health endpoints and app factory

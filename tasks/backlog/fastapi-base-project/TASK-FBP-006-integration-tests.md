@@ -1,17 +1,35 @@
 ---
 id: TASK-FBP-006
-title: "Integration tests for all 28 BDD scenarios"
+title: Integration tests for all 28 BDD scenarios
 task_type: testing
 parent_review: TASK-REV-01B0
 feature_id: FEAT-FBP
-status: pending
+status: in_review
 wave: 4
 implementation_mode: task-work
 complexity: 6
 dependencies:
-  - TASK-FBP-005
+- TASK-FBP-005
 priority: high
-tags: [testing, integration, bdd]
+tags:
+- testing
+- integration
+- bdd
+autobuild_state:
+  current_turn: 1
+  max_turns: 30
+  worktree_path: /Users/richardwoollcott/Projects/appmilla_github/vllm-profiling/.guardkit/worktrees/FEAT-1637
+  base_branch: main
+  started_at: '2026-03-07T12:42:29.991568'
+  last_updated: '2026-03-07T12:48:37.263257'
+  turns:
+  - turn: 1
+    decision: approve
+    feedback: null
+    timestamp: '2026-03-07T12:42:29.991568'
+    player_summary: Implementation via task-work delegation
+    player_success: true
+    coach_success: true
 ---
 
 # Task: Integration tests for all 28 BDD scenarios
